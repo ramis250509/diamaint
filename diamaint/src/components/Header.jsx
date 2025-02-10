@@ -3,7 +3,7 @@ import logo from '../assets/header-img/logo.svg';
 import card from '../assets/header-img/card.svg';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Header = () => {
   const keys = [
     { id: 0, name: 'О продукте' },
     { id: 1, name: 'Каталог' },
@@ -20,8 +20,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-[#EDECF6] flex justify-center pt-3 pb-5">
-      <nav className="flex justify-between items-center gap-4 sm:gap-[437px] w-full max-w-screen-xl px-4">
+    <header className="bg-[#EDECF6] w-full flex justify-center pt-3 pb-5">
+      <nav className="flex justify-between items-center gap-4 sm:gap-[30px] w-full max-w-screen-xl px-4">
         {/* Left section: Logo and Menu */}
         <div className="flex items-center gap-4 sm:gap-[58px]">
           <img src={logo} alt="logo" className="h-15.5" />
@@ -82,4 +82,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
