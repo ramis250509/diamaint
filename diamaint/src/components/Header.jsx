@@ -3,7 +3,7 @@ import logo from '../assets/header-img/logo.svg';
 import card from '../assets/header-img/card.svg';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Navbar = () => {
   const keys = [
     { id: 0, name: 'О продукте' },
     { id: 1, name: 'Каталог' },
@@ -20,8 +20,8 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-[#EDECF6] w-full flex justify-center pt-3 pb-5">
-      <nav className="flex justify-between items-center gap-4 sm:gap-[30px] w-full max-w-screen-xl px-4">
+    <header className="bg-[#EDECF6] flex justify-center pt-3 pb-5 z-50">
+      <nav className="flex justify-between items-center gap-4 sm:gap-[437px] w-full max-w-screen-xl px-4">
         {/* Left section: Logo and Menu */}
         <div className="flex items-center gap-4 sm:gap-[58px]">
           <img src={logo} alt="logo" className="h-15.5" />
@@ -31,7 +31,7 @@ const Header = () => {
                 key={key.id}
                 data-id={key.id}
                 onClick={() => navSel(key.id)}
-                className={`cursor-pointer text-[16px] hover:opacity-[0.8] ${id === key.id ? 'bg-[#515076] text-[#EDECF6]' : 'text-[#515076]'} pt-4.5 pb-4.5 pl-4 pr-4 rounded-[3px] transition-colors duration-900 ease-in-out`}
+                className={`cursor-pointer z-10 text-[16px] hover:opacity-[0.8] ${id === key.id ? 'bg-[#515076] text-[#EDECF6]' : 'text-[#515076]'} pt-4.5 pb-4.5 pl-4 pr-4 rounded-[3px] transition-colors duration-900 ease-in-out`}
               >
                 {key.name}
               </li>
@@ -47,15 +47,15 @@ const Header = () => {
 
         {/* Right section: Card and Social Links */}
         <div className="flex items-center gap-4 sm:gap-[25px]">
-          <div className={`bg-white flex justify-center rounded-[50%] p-3 relative transition-all duration-300 ${isMenuOpen ? 'h-8 w-8' : 'h-10 w-10'}`}>
+          <div className={`bg-white flex justify-center z-10 rounded-[50%] p-3 relative transition-all duration-300 ${isMenuOpen ? 'h-8 w-8' : 'h-10 w-10'}`}>
             <Link to="/">
               <img src={card} alt="card" className="h-full w-full object-cover" />
             </Link>
             <div className="font-[Montserrat] absolute top-[-1px] right-[-10px] bg-[#757AA5] px-2 py-0.5 text-white rounded-[50%] text-[12px]">1</div>
           </div>
           <div className="flex flex-col gap-[5px]">
-            <a href="https://instagram.com" className="text-[#515076] font-[Montserrat] text-[16px] cursor-pointer">Instagram</a>
-            <a href="https://facebook.com" className="text-[#515076] font-[Montserrat] text-[16px] cursor-pointer">Facebook</a>
+            <a href="https://instagram.com" className="text-[#515076] z-10 font-[Montserrat] text-[16px] cursor-pointer">Instagram</a>
+            <a href="https://facebook.com" className="text-[#515076] z-10 font-[Montserrat] text-[16px] cursor-pointer">Facebook</a>
           </div>
         </div>
       </nav>
@@ -66,7 +66,6 @@ const Header = () => {
           {keys.map((key) => (
             <li
               key={key.id}
-              data-id={key.id}
               onClick={() => {
                 navSel(key.id);
                 setIsMenuOpen(false); // Close menu on item click
@@ -82,4 +81,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
